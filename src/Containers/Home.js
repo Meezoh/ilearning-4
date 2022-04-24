@@ -3,9 +3,6 @@ import Form from 'react-bootstrap/form';
 import { useState } from 'react';
 import Message from './Message';
 
-// interface Prop {
-//   handleName: any;
-// }
 
 const Home = () => {
   const [name, setName] = useState('');

@@ -1,4 +1,4 @@
-import Form from 'react-bootstrap/form';
+import Form from 'react-bootstrap/Form';
 import { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 
@@ -9,9 +9,10 @@ const Message = ({ name, view, handleGoBack }) => {
   const [body, setBody] = useState('');
 
   const details = { name: newName.toLowerCase(), title, body };
+  const nameConvert = name.toLowerCase();
 
   useEffect(() => {
-    fetch('https://email-kin.herokuapp.com/api/v1/messages/' + name)
+    fetch('https://email-kin.herokuapp.com/api/v1/messages/' + nameConvert)
       .then(res => res.json())
       .then(result => {
         setUser(
@@ -28,7 +29,7 @@ const Message = ({ name, view, handleGoBack }) => {
     })
       .then(res => res.json())
       .then(result => console.log(result))
-      .catch(err => console.log(err));
+      .catch(err => err);
   };
 
   return (
